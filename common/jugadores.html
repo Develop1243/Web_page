@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Team Elite - Flip Cards</title>
+  <link rel="stylesheet" href="cards.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">TEAM ELITE</div>
+      <nav class="nav">
+        <a href="./index.html">Inicio</a>
+        <a href="./jugadores.html">Clases</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección 1 -->
+  <section class="card-grid">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=800&q=80" alt="Entrenamiento">
+          <h3>Entrenamiento</h3>
+        </div>
+        <div class="card-back">
+          <p>Sesiones personalizadas, programas progresivos y seguimiento profesional para tu mejora continua.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1600962815726-457c1e23d1f3?auto=format&fit=crop&w=800&q=80" alt="Clases grupales">
+          <h3>Clases grupales</h3>
+        </div>
+        <div class="card-back">
+          <p>Ambiente motivante, compañeros que impulsan tu rendimiento y entrenadores certificados.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1583454110550-21d6b55a9b97?auto=format&fit=crop&w=800&q=80" alt="Nutrición">
+          <h3>Nutrición</h3>
+        </div>
+        <div class="card-back">
+          <p>Planes alimenticios hechos a tu medida para potenciar tu desempeño físico y mental.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Resultados">
+          <h3>Resultados</h3>
+        </div>
+        <div class="card-back">
+          <p>Entrenamientos y asesorías diseñados para lograr resultados visibles y sostenibles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2 -->
+  <section class="card-grid">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80" alt="Energía">
+          <h3>Energía</h3>
+        </div>
+        <div class="card-back">
+          <p>Entrenamientos diseñados para maximizar tu resistencia y vitalidad diaria.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1594737625785-c3b94864c8ad?auto=format&fit=crop&w=800&q=80" alt="Fuerza">
+          <h3>Fuerza</h3>
+        </div>
+        <div class="card-back">
+          <p>Rutinas enfocadas en fuerza funcional, equilibrio y técnica avanzada.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1594737625785-c3b94864c8ad?auto=format&fit=crop&w=800&q=80" alt="Recuperación">
+          <h3>Recuperación</h3>
+        </div>
+        <div class="card-back">
+          <p>Optimiza tus tiempos de descanso y acelera tu progreso físico.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80" alt="Motivación">
+          <h3>Motivación</h3>
+        </div>
+        <div class="card-back">
+          <p>Entrenadores que te inspiran y te ayudan a superar tus propios límites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Efecto de voltear las cartas
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+      });
+    });
+
+    // Animación suave al aparecer las secciones
+    const sections = document.querySelectorAll('.card-grid');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("visible", entry.isIntersecting);
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

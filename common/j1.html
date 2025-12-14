@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Team Elite - Kickboxing</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/nkj6iks.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">TEAM ELITE</div>
+      <nav class="navbar">
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#">Inicio</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Jugadas</a>
+              <ul class="submenu">
+                <li><a href="#">Estrategias</a></li>
+                <li><a href="#">Formaciones</a></li>
+                <li><a href="#">Análisis</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Jugadores</a>
+              <ul class="submenu">
+                <li><a href="#">Ofensiva</a></li>
+                <li><a href="#">Defensiva</a></li>
+                <li><a href="#">Estadísticas</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+
+
+    <!-- Sección siguiente normal (puedes repetir alt layout si quieres) -->
+    <section class="info-section reveal">
+      <div class="info-text">
+        <h2>Que hacemos</h2>
+        <!-- are you ready (boton circular con flechita) esto llevar al bot-->
+        <p>Planes de competencia para quien busca dar el salto y entrenar con objetivos específicos.</p>
+      </div>
+      <img src="../img/hdmi2.jpg" alt="competencias">
+    </section>
+
+    <section class="gallery-section">
+  <div class="gallery-row top-row">
+    <div class="gallery-group">
+      <img src="../img/hdmi2.jpg" alt="Imagen 1" class="gallery-img">
+      <img src="../img/lapto.jpg" alt="Imagen 2" class="gallery-img">
+      <img src="../img/hdmi2.jpg" alt="Imagen 5" class="gallery-img hidden-img">
+      <img src="../img/lapto.jpg" alt="Imagen 6" class="gallery-img hidden-img">
+    </div>
+  </div>
+
+  <div class="gallery-row bottom-row">
+    <div class="gallery-group">
+      <img src="../img/hdmi2.jpg" alt="Imagen 3" class="gallery-img">
+      <img src="../img/lapto.jpg" alt="Imagen 4" class="gallery-img">
+      <img src="../img/hdmi2.jpg" alt="Imagen 7" class="gallery-img hidden-img">
+      <img src="../img/lapto.jpg" alt="Imagen 8" class="gallery-img hidden-img">
+    </div>
+  </div>
+</section>
+
+    <!-- Footer titulo y abajo video-->
+    
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p><strong>Team Elite Kickboxing</strong> | CDMX</p>
+        <p>Contacto: <a href="mailto:info@teamelite.com">info@teamelite.com</a></p>
+        <p>Síguenos en 
+          <a href="#">Instagram</a> | 
+          <a href="#">Facebook</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- SCRIPT: play/pause, cursor-circle, carousel pause on hover, gallery hover -> play video, counter anim -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+
+      // --- Fade in/out secciones ---
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle("visible", entry.isIntersecting);
+        });
+      }, { threshold: 0.4 });
+      sections.forEach(s => io.observe(s));
+    });
+
+    const board = document.querySelector('.board');
+  const svg = document.querySelector('.arrows-svg');
+  const steps = Array.from(document.querySelectorAll('.play-step'));
+
+  // Función para obtener el centro y radio de cada círculo
+  function getCenter(el) {
+    const rect = el.getBoundingClientRect();
+    const boardRect = board.getBoundingClientRect();
+    return {
+      x: rect.left - boardRect.left + rect.width / 2,
+      y: rect.top - boardRect.top + rect.height / 2,
+      radius: rect.width / 2
+    };
+  }
+  </script>
+
+</body>
+</html>

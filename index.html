@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Team Elite - Kickboxing</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/nkj6iks.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">TEAM ELITE</div>
+      <nav class="navbar">
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#">Inicio</a>
+            </li>
+            <li class="menu-item">
+              <a href="./common/jugadores.html">Jugadores</a>
+              <ul class="submenu">
+                <li><a href="#">Estrategias</a></li>
+                <li><a href="#">Formaciones</a></li>
+                <li><a href="#">Análisis</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="./common/becas.html">becas</a>
+              <ul class="submenu">
+                <li><a href="#">Ofensiva</a></li>
+                <li><a href="#">Defensiva</a></li>
+                <li><a href="#">Estadísticas</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="./common/vida.html">Vida Americana</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Contacto</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO con máscara y video -->
+    <section class="hero">
+      <div class="hero-mask">
+        <!-- Video recortado en paralelogramo -->
+        <video id="heroVideo" autoplay muted loop playsinline preload="metadata">
+          <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+        </video>
+
+        <!-- overlay circular que sigue cursor (play/pause) -->
+        <div class="cursor-circle" id="cursorCircle">PAUSE</div>
+
+        <!-- contenido hero (texto sobre el video) -->
+        <div class="hero-content">
+          <h1>TEAM ELITE KICKBOXING</h1>
+          <p>Disciplina. Fuerza. Respeto.</p>
+        </div>
+      </div>
+
+      <!-- boton volumen -->
+      <div class="video-controls">
+        <button id="volumeBtn" class="volume-btn" aria-label="volumen">🔊</button>
+      </div>
+    </section>
+
+    <!-- Sección siguiente normal (puedes repetir alt layout si quieres) -->
+    <section class="info-section reveal parallax-info-section">
+      <div class="info-text">
+        <h2>Que hacemos</h2>
+        <p>Somos una agencia dedicada a ofrecer oportunidades a jóvenes deportistas que desean combinar el deporte de alta competición con una educación de primer nivel en Estados Unidos. Nuestro objetivo es facilitar esta posibilidad a través de becas deportivas y académicas.
+</p>
+      </div>
+      <div class="parallax-media-container media-1"> 
+          <div class="parallax-layer layer-1"></div>
+          <div class="parallax-layer layer-2"></div>
+          <div class="parallax-layer layer-3"></div>
+      </div>
+    </section>
+
+    <!-- Galería interactiva (2 columnas): imagen cambia a video on hover -->
+    <section class="info-section reveal parallax-info-section">
+      <div class="parallax-media-container media-2">
+          <div class="parallax-layer layer-1"></div>
+          <div class="parallax-layer layer-2"></div>
+          <div class="parallax-layer layer-3"></div>
+      </div>
+      <div class="info-text">
+        <h2>¿Por qué HC Scholarships?</h2>
+        <p>HC Scholarships te dará el asesoramiento que <b>TÚ</b> necesitas con <b>especialistas que ya han vivido la experiencia que tu ahora quieres vivir</b>.Ellos estarán volcados en conseguir la oportunidad que realmente estás buscando ya que queremos sacar lo mejor de ti, tanto <b>deportiva como académicamente .</b>
+La pregunta es... Botón [Are you ready?]</p>
+        </div>
+    </section>
+
+    <section class="interactive-gallery">
+      <div class="ig-item">
+        <div class="media-wrap">
+          <img class="ig-img" src="./img/hdmi2.jpg" alt="Clase 1">
+          <video class="ig-video" muted preload="metadata" loop>
+            <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="ig-caption">
+          <strong>Clase intensiva</strong>
+          <p>Entrenamiento de fuerza y técnica.</p>
+        </div>
+      </div>
+
+      <div class="ig-item">
+        <div class="media-wrap">
+          <img class="ig-img" src="./img/lapto.jpg" alt="Clase 2">
+          <video class="ig-video" muted preload="metadata" loop>
+            <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="ig-caption">
+          <strong>Clases grupales</strong>
+          <p>Motivación y técnica en equipo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-gallery">
+      <div class="ig-item">
+        <div class="media-wrap">
+          <img class="ig-img" src="./img/hdmi2.jpg" alt="Clase 1">
+          <video class="ig-video" muted preload="metadata" loop>
+            <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="ig-caption">
+          <strong>Clase intensiva</strong>
+          <p>Entrenamiento de fuerza y técnica.</p>
+        </div>
+      </div>
+
+      <div class="ig-item">
+        <div class="media-wrap">
+          <img class="ig-img" src="./img/lapto.jpg" alt="Clase 2">
+          <video class="ig-video" muted preload="metadata" loop>
+            <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="ig-caption">
+          <strong>Clases grupales</strong>
+          <p>Motivación y técnica en equipo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-gallery">
+      <div class="ig-item">
+        <div class="media-wrap">
+          <img class="ig-img" src="./img/hdmi2.jpg" alt="Clase 1">
+          <video class="ig-video" muted preload="metadata" loop>
+            <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="ig-caption">
+          <strong>Clase intensiva</strong>
+          <p>Entrenamiento de fuerza y técnica.</p>
+        </div>
+      </div>
+
+      <div class="ig-item">
+        <div class="media-wrap">
+          <img class="ig-img" src="./img/lapto.jpg" alt="Clase 2">
+          <video class="ig-video" muted preload="metadata" loop>
+            <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="ig-caption">
+          <strong>Clases grupales</strong>
+          <p>Motivación y técnica en equipo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de info en 4 columnas: imagen | info | imagen | info -->
+    <!-- Sección de info en 4 columnas: imagen | info | imagen | info -->
+    <!-- <section class="info-grid">
+      <div class="grid-item media">
+        <img src="./img/lapto.jpg" alt="Entrenamiento de élite">
+      </div>
+
+      <div class="grid-item info">
+        <h3>beca deportiva</h3>
+        <p>Sesiones personalizadas, programas progresivos y seguimiento profesional para tu mejora continua.</p>
+      </div>
+
+      <div class="grid-item media">
+        <img src="./img/lapto.jpg" alt="Clases grupales">
+      </div>
+
+      <div class="grid-item info">
+        <h3>NSA</h3>
+        <p>Ambiente motivante, compañeros que impulsan tu rendimiento y entrenadores certificados.</p>
+      </div>
+    </section> -->
+
+
+    <!-- Contador animado -->
+    <section class="counter-section">
+      <div class="counter-wrap">
+        <div class="counter-number" data-target="74">0</div>
+        <div class="counter-label">Estudiantes</div>
+      </div>
+    </section>
+
+    <!-- Cards deben voltear -->
+    <section class="cards-section reveal">
+        <h2 class="cards-title">Ventajas clave para el deportista español:</h2>
+        <div class="cards-container">
+            <div class="card" style="background-image: url('./img/Assets/sello\ 2.webp');">
+            <div class="card-overlay">
+                <h3>🏆Becas (centrado en tu diferencial)</h3>
+                <p>Programas diseñados para mejorar tu técnica y fuerza.</p>
+            </div>
+            </div>
+
+            <div class="card" style="background-image: url('./img/Assets/sello\ 1.webp');">
+            <div class="card-overlay">
+                <h3>¿Qué necesitas para conseguir una beca en EE. UU.?</h3>
+                <p>Asesoría personalizada para una alimentación balanceada.</p>
+            </div>
+            </div>
+
+            <div class="card" style="background-image: url('./img/Assets/sello\ 3.webp');">
+            <div class="card-overlay">
+                <h3>📘 Aprobar el examen de inglés (Duolingo o TOEFL).:</h3>
+                <p>Prepárate para dar el salto al siguiente nivel competitivo.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel (completo, cada slide 100vw) -->
+    <section class="carousel" aria-hidden="false">
+      <div class="carousel-track">
+        <div class="carousel-item">
+          <img src="./img/Assets/Banner de Patrocinadores/Recurso 23.webp" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/Assets/Banner de Patrocinadores/Recurso 24.webp" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+          <img src="./img/Assets/Banner de Patrocinadores/Recurso 25.webp" alt="Imagen 3">
+        </div>
+
+        <!-- duplicados para loop fluido -->
+        <div class="carousel-item">
+          <img src="./media/lapto.jpg" alt="Imagen 4">
+        </div>
+        <div class="carousel-item">
+          <img src="./media/hdmi2.jpg" alt="Imagen 5">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p><strong>Team Elite Kickboxing</strong> | CDMX</p>
+        <p>Contacto: <a href="mailto:info@teamelite.com">info@teamelite.com</a></p>
+        <p>Síguenos en 
+          <a href="#">Instagram</a> | 
+          <a href="#">Facebook</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- SCRIPT: play/pause, cursor-circle, carousel pause on hover, gallery hover -> play video, counter anim -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+
+      // --- Fade in/out secciones (Reveal effect) ---
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle("visible", entry.isIntersecting);
+        });
+      }, { threshold: 0.4 });
+      sections.forEach(s => io.observe(s));
+
+      // --- Hero video interactividad ---
+      const video = document.getElementById("heroVideo");
+      const circle = document.getElementById("cursorCircle");
+      const volumeBtn = document.getElementById("volumeBtn");
+      const heroMask = document.querySelector(".hero-mask");
+      let isPlaying = true;
+      if (video) video.volume = 0.35;
+
+      if (heroMask && circle) {
+          heroMask.addEventListener("mousemove", (e) => {
+            const rect = heroMask.getBoundingClientRect();
+            circle.style.left = `${e.clientX - rect.left}px`;
+            circle.style.top = `${e.clientY - rect.top}px`;
+          });
+
+          heroMask.addEventListener("click", () => {
+            if (video.paused) {
+              video.play();
+              isPlaying = true;
+              circle.textContent = "PAUSE";
+            } else {
+              video.pause();
+              isPlaying = false;
+              circle.textContent = "PLAY";
+            }
+            setTimeout(() => (circle.textContent = ""), 600);
+          });
+      }
+
+      if (volumeBtn && video) {
+          volumeBtn.addEventListener("click", () => {
+            video.muted = !video.muted;
+            volumeBtn.textContent = video.muted ? "🔇" : "🔊";
+          });
+      }
+
+      // --- Carrusel pausa on hover ---
+      const track = document.querySelector(".carousel-track");
+      const carousel = document.querySelector(".carousel");
+      if (carousel && track) {
+        carousel.addEventListener("mouseenter", () => track.style.animationPlayState = "paused");
+        carousel.addEventListener("mouseleave", () => track.style.animationPlayState = "running");
+      }
+
+      // --- Counter animación ---
+      function startCounter(el) {
+        if (!el || el.dataset.started) return;
+        el.dataset.started = "true";
+        const target = parseInt(el.dataset.target, 10) || 0;
+        let current = 0;
+        const step = target / 80;
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(interval);
+          }
+          el.textContent = Math.round(current);
+        }, 20);
+      }
+
+      const counter = document.querySelector(".counter-section");
+      const counterNumber = document.querySelector(".counter-number");
+      const counterObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && counterNumber) startCounter(counterNumber);
+      }, { threshold: 0.6 });
+      if (counter) counterObserver.observe(counter);
+
+      // --- Interactive gallery ---
+      document.querySelectorAll(".ig-item").forEach(item => {
+        const img = item.querySelector(".ig-img");
+        const vid = item.querySelector(".ig-video");
+        if (img && vid) {
+          item.addEventListener("mouseenter", () => {
+            img.style.opacity = "0";
+            vid.style.display = "block";
+            vid.play();
+          });
+          item.addEventListener("mouseleave", () => {
+            vid.pause();
+            vid.style.display = "none";
+            img.style.opacity = "1";
+          });
+        }
+      });
+
+      // --- Lógica del Parallax de Capas en Info Sections (Ambas) ---
+      const parallaxContainers = document.querySelectorAll('.parallax-media-container');
+
+      parallaxContainers.forEach(parallaxContainer => {
+        
+          parallaxContainer.addEventListener('mousemove', (e) => {
+            const rect = parallaxContainer.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const x = e.clientX - rect.left - centerX;
+            const y = e.clientY - rect.top - centerY;
+
+            // Rotación general del contenedor 
+            const rotateX = y / centerY * 5; 
+            const rotateY = x / centerX * -5; 
+            parallaxContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            const layer1 = parallaxContainer.querySelector('.layer-1');
+            const layer2 = parallaxContainer.querySelector('.layer-2');
+            const layer3 = parallaxContainer.querySelector('.layer-3');
+
+            // Mover las capas (efecto Parallax)
+            if (layer1) {
+              layer1.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`; // Movimiento LENTO
+            }
+            if (layer2) {
+              layer2.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`; // Movimiento MEDIO
+            }
+            if (layer3) {
+              layer3.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`; // Movimiento RÁPIDO
+            }
+          });
+
+          // Al salir, la tarjeta vuelve a su posición original
+          parallaxContainer.addEventListener('mouseleave', () => {
+            parallaxContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            
+            const layer1 = parallaxContainer.querySelector('.layer-1');
+            const layer2 = parallaxContainer.querySelector('.layer-2');
+            const layer3 = parallaxContainer.querySelector('.layer-3');
+
+            // Resetear la posición de las capas internas
+            if (layer1) layer1.style.transform = 'translate(0, 0)';
+            if (layer2) layer2.style.transform = 'translate(0, 0)';
+            if (layer3) layer3.style.transform = 'translate(0, 0)';
+          });
+      });
+      
+    }); /* Fin de DOMContentLoaded */
+  </script>
+
+</body>
+</html>

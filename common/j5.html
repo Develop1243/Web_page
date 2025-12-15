@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HC Scholarships</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/nkj6iks.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">TEAM ELITE</div>
+      <nav class="navbar">
+          <ul class="menu">
+            <li><img src="../img/Assets/favicon.webp" alt="" style="width: 35px;"> </li>
+            <li class="menu-item">
+              <a href="../index.html">Inicio</a>
+            </li>
+            <li class="menu-item">
+              <a href="./becas.html">Becas</a>
+              <ul class="submenu">
+                <li><a href="#">Estrategias</a></li>
+                <li><a href="#">Formaciones</a></li>
+                <li><a href="#">Análisis</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="./faq.html">FAQ</a>
+              <ul class="submenu">
+                <li><a href="#">Ofensiva</a></li>
+                <li><a href="#">Defensiva</a></li>
+                <li><a href="#">Estadísticas</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="./vida.html">Más</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+
+    <!-- Sección siguiente normal (puedes repetir alt layout si quieres) -->
+    <section class="fullscreen-section">
+        <h2>Phil Rodriguez</h2>
+        <p>Deporte: Tenis/Universidad: Daemen University (EE. UU.)/Logro: Beca para competir y destacarse como tenista/Hoy: Profesor de tenis</p>
+        <p><br>
+            Esta historia es la prueba de que el deporte universitario no solo te abre una puerta: te puede
+abrir un camino completo. Phil obtuvo una beca para jugar tenis en Daemen University y se
+destacó por su rendimiento durante su etapa competitiva.
+
+Al recorrer esta galería verás momentos de evolución real: entrenamientos, partidos, equipo y
+el tipo de rutina que forma a un deportista con mentalidad profesional. Lo más inspirador es lo
+que vino después: hoy Phil trabaja como profesor de tenis, manteniendo viva esa relación con
+el deporte desde la enseñanza y el liderazgo.
+
+Su historia conecta con algo muy potente: una beca no es solo financiación. Es acceso a una
+red, a una estructura, a una experiencia que puede convertirse en carrera. Si quieres estudiar y
+competir en EE. UU., aquí tienes un ejemplo claro de cómo una decisión bien tomada puede
+seguir dando frutos muchos años después.
+        </p>
+        <button></button>
+    </section>
+
+    <section class="gallery-section">
+  <div class="gallery-row top-row">
+    <div class="gallery-group">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert.webp" alt="Imagen 1" class="gallery-img">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert (1).webp" alt="Imagen 2" class="gallery-img">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert (2).webp" alt="Imagen 5" class="gallery-img hidden-img">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert (3).webp" alt="Imagen 6" class="gallery-img hidden-img">
+    </div>
+  </div>
+
+  <div class="gallery-row bottom-row">
+    <div class="gallery-group">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert (4).webp" alt="Imagen 3" class="gallery-img">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert (5).webp" alt="Imagen 4" class="gallery-img">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert (6).webp" alt="Imagen 7" class="gallery-img hidden-img">
+      <img src="../img/Nuestros deportistas/Phil Rodriguez/convert (7).webp" alt="Imagen 8" class="gallery-img hidden-img">
+    </div>
+  </div>
+</section>
+
+    <!-- Footer titulo y abajo video-->
+    
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p><strong>Team Elite Kickboxing</strong> | CDMX</p>
+        <p>Contacto: <a href="mailto:info@teamelite.com">info@teamelite.com</a></p>
+        <p>Síguenos en 
+          <a href="#">Instagram</a> | 
+          <a href="#">Facebook</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- SCRIPT: play/pause, cursor-circle, carousel pause on hover, gallery hover -> play video, counter anim -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+
+      // --- Fade in/out secciones ---
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle("visible", entry.isIntersecting);
+        });
+      }, { threshold: 0.4 });
+      sections.forEach(s => io.observe(s));
+    });
+
+    const board = document.querySelector('.board');
+  const svg = document.querySelector('.arrows-svg');
+  const steps = Array.from(document.querySelectorAll('.play-step'));
+
+  // Función para obtener el centro y radio de cada círculo
+  function getCenter(el) {
+    const rect = el.getBoundingClientRect();
+    const boardRect = board.getBoundingClientRect();
+    return {
+      x: rect.left - boardRect.left + rect.width / 2,
+      y: rect.top - boardRect.top + rect.height / 2,
+      radius: rect.width / 2
+    };
+  }
+  </script>
+
+</body>
+</html>

@@ -19,9 +19,9 @@ html, body { height: 100%; scroll-behavior: smooth; background: #000; color: #ff
   justify-content: space-between;
   align-items: center;
 }
-.brand { color: gold; font-weight: 700; letter-spacing: 1px; }
+.brand { color: #A5c717; font-weight: 700; letter-spacing: 1px; }
 .nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; transition: color 0.3s; }
-.nav a:hover { color: gold; }
+.nav a:hover { color: #A5c717; }
 
 /* ---------- SECCIONES DE PANTALLA COMPLETA ---------- */
 .card-grid {
@@ -100,7 +100,7 @@ html, body { height: 100%; scroll-behavior: smooth; background: #000; color: #ff
 .card-front h3 {
   position: relative;
   z-index: 1;
-  color: gold;
+  color: #A5c717;
   font-size: 1.4em;
   margin-bottom: 20px;
   background: rgba(0,0,0,0.6);

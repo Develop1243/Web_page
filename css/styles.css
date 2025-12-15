@@ -1598,3 +1598,125 @@ h1, h2, h3, h4, h5, h6, .brand, .counter-number, .cards-title, .plays-title, .fa
     text-decoration: underline;
 }
 
+/* -------------------
+   FOOTER: HC SCHOLARSHIPS (NUEVA VERSIÓN GRID)
+   ------------------- */
+.site-footer {
+    position: relative;
+    background: #080808; /* Color casi negro para contraste */
+    color: #ccc;
+    padding: 60px 5%; /* Espacio interno */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    height: auto;
+}
+
+/* Contenedor principal de la cuadrícula (3 Columnas) */
+.footer-grid-container {
+    display: grid;
+    /* 3 columnas, responsivas */
+    grid-template-columns: repeat(3, minmax(220px, 1fr)); 
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto 50px auto; /* Centrar la cuadrícula */
+}
+
+/* Estilo para Títulos (HC Scholarships, Contacto, Enlaces, Legal, Redes) */
+.footer-col h2, .footer-col h3 {
+    color: #A5c717; 
+    margin-bottom: 15px;
+    /* Usar la fuente de impacto que ya tienes */
+    font-family: "good-times", sans-serif;
+    font-weight: 700; 
+    font-style: italic; 
+}
+.footer-col h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-top: 25px; 
+}
+.footer-col p {
+    margin-bottom: 15px;
+}
+
+/* Estilo para los bloques de enlaces (todos los grupos) */
+.footer-links-group a {
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+    display: block; /* Para que cada enlace ocupe una línea */
+}
+.footer-links-group a:hover {
+    color: #A5c717;
+    text-decoration: underline;
+}
+
+/* Columna de Redes Sociales: Estilizado como lista horizontal para mejor look */
+.social-icons-group {
+    display: flex;
+    flex-direction: row; /* Coloca los iconos horizontalmente */
+    gap: 15px;
+}
+.social-icons-group a {
+    /* Desactivamos el 'display: block' de la regla anterior para esta clase */
+    display: inline-block; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Sección de Aviso (Disclaimer) */
+.footer-disclaimer {
+    max-width: 1000px;
+    margin: 20px auto 40px auto;
+    padding: 20px;
+    background: rgba(165, 199, 23, 0.1); 
+    border-radius: 5px;
+    text-align: center;
+    border-left: 3px solid #A5c717;
+}
+.footer-disclaimer p {
+    color: #ddd;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Copyright Final */
+.footer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-copyright p {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0;
+}
+
+/* Responsive para el Footer */
+@media (max-width: 900px) {
+    .footer-grid-container {
+        /* Pasa a 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .site-footer {
+        text-align: center;
+    }
+    .footer-grid-container {
+        /* Pasa a 1 columna en móviles pequeños */
+        grid-template-columns: 1fr;
+    }
+    .footer-links-group, .social-icons-group {
+        /* Centra los enlaces y las redes en vista móvil */
+        align-items: center; 
+        justify-content: center;
+    }
+    /* El aviso y el copyright se centran automáticamente */
+}
+

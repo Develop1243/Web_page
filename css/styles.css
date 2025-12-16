@@ -1720,3 +1720,228 @@ h1, h2, h3, h4, h5, h6, .brand, .counter-number, .cards-title, .plays-title, .fa
     /* El aviso y el copyright se centran automáticamente */
 }
 
+/* ========================================= */
+/* 1. @media (max-width: 900px) - Tablet / Landscape */
+/* ========================================= */
+@media (max-width: 900px) {
+    
+    /* --- NAVEGACIÓN PRINCIPAL --- */
+    /* Reduce el padding para ganar espacio */
+    .site-header .header-inner {
+        padding: 0 3%;
+    }
+
+    /* Oculta los submenús al pasar a tablet/móvil, si no se usan en el diseño responsivo */
+    .navbar .submenu {
+        display: none !important; 
+    }
+
+    /* --- FOOTER (Ajuste de columnas) --- */
+    .footer-grid-container {
+        /* Pasa de 3 a 2 columnas para mejor uso del espacio horizontal */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    /* --- SECCIONES DE INFO (Parallax) --- */
+    .info-section .info-container {
+        flex-direction: column; /* Apila el texto sobre la imagen/video */
+        gap: 40px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .info-section .text-content,
+    .info-section .media-content {
+        width: 90%; /* Ancho completo */
+        max-width: 700px;
+    }
+    
+    /* --- SECCIÓN GALERÍA INTERACTIVA (4 Columnas a 2) --- */
+    .interactive-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* ========================================= */
+/* 2. @media (max-width: 600px) - Teléfono Móvil */
+/* ========================================= */
+@media (max-width: 600px) {
+
+    /* === ANULACIÓN TOTAL DE VISIBILIDAD Y ALTURA FIJA === */
+    /* La regla más importante: Atacamos directamente la etiqueta 'section' */
+    section,
+    section.hero-section,
+    section.cards-section,
+    section.plays-section,
+    section.info-section,
+    section.fullscreen-section
+    {
+        /* 1. CLAVE: Anulamos la altura y permitimos scroll vertical */
+        height: auto !important; 
+        min-height: auto !important;
+        overflow: visible !important;
+        
+        /* 2. CLAVE: Anulamos el estado 'oculto' de la animación */
+        opacity: 1 !important; 
+        transform: none !important;
+        
+        /* Aseguramos que el contenido tenga espacio y no fuerce scroll horizontal */
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+        overflow-x: hidden !important; 
+    }
+    
+    /* Si existe una clase .visible o similar, la reforzamos */
+    section.visible {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    /* --- NAVEGACIÓN --- */
+    .hamburger-menu { display: block; }
+    .navbar .menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        z-index: 999;
+    }
+    .navbar .menu.active { display: flex; }
+    .navbar .menu-item { margin: 10px 0; text-align: center; width: 100%; }
+    .navbar .menu-item a { display: block; padding: 10px 0; font-size: 1.1rem; }
+    .navbar .menu-item .submenu { display: none !important; }
+    .site-header .brand { font-size: 1.2rem; }
+    
+    /* --- TIPOGRAFÍA Y SECCIONES INFO --- */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    p, .legal-content p, .legal-content ul, .legal-content ol {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+    .info-section {
+        flex-direction: column !important;
+        gap: 30px;
+        padding: 50px 5% !important;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ----------------------------------------------------------------------------------- */
+    /* === GESTIÓN DE CARDS === */
+
+    /* [A] EXCEPCIÓN: VENTAJAS CLAVE (La 1ra .cards-section) - Scroll Horizontal */
+    section.cards-section:nth-of-type(1) .cards-container {
+        display: flex !important;
+        grid-template-columns: unset !important; 
+        overflow-x: scroll !important; 
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory; 
+        width: 100vw !important; 
+        margin: 0 !important; 
+        padding: 0 0 20px 5% !important; 
+        gap: 20px !important;
+    }
+    section.cards-section:nth-of-type(1) .card {
+        flex: 0 0 80vw !important; 
+        scroll-snap-align: start;
+        width: 80vw !important; 
+        height: 300px !important; 
+        margin: 0 !important;
+    }
+    
+    /* [B] REGLA GENERAL: APILAMIENTO VERTICAL (para 2da, 3ra, etc. sección de tarjetas) */
+    .cards-section .cards-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important; 
+        gap: 30px !important;
+        width: 90% !important;
+        max-width: 450px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+    .cards-section .card {
+        width: 100% !important; 
+        height: 350px !important; 
+        max-width: 350px !important;
+        margin: 0 auto !important; 
+    }
+
+    /* ----------------------------------------------------------------------------------- */
+    
+    /* === ESTRATEGIA DE JUEGO (Tablero - Stacking) === */
+    section.plays-section {
+        padding: 50px 5% !important;
+    }
+    .plays-section .board {
+        /* FUERZA LA ANULACIÓN de posición y el cambio a apilamiento */
+        position: relative !important; 
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important; 
+        flex-direction: column !important;
+        gap: 40px !important;
+        padding: 20px 0 !important;
+    }
+    .play-step {
+        /* FUERZA LA ANULACIÓN de posición absoluta en cada paso */
+        position: static !important; 
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important; 
+        display: flex !important;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .play-step::before {
+        content: attr(data-step); /* Si tienes el atributo en tu HTML */
+        display: block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #a5c717; 
+        color: #000;
+        border-radius: 50%;
+        font-weight: bold;
+        flex-shrink: 0;
+        margin-top: 5px;
+    }
+    .play-step .play-text {
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important; 
+        visibility: visible !important;
+        width: auto !important;
+        text-align: left !important;
+    }
+    .arrows-svg {
+        display: none !important;
+    }
+    
+    /* --- FOOTER --- */
+    .footer-grid-container { grid-template-columns: 1fr; text-align: center; }
+    .site-footer { font-size: 0.8rem; }
+}
+
+@media (max-width: 600px) {
+    
+    /* ... otros estilos de móvil ... */
+
+    /* OCULTAR COMPLETAMENTE LA SECCIÓN DE ESTRATEGIA DE JUEGO */
+    section.plays-section {
+        display: none !important;
+        visibility: hidden !important; 
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* ... el resto de tu código @media (max-width: 600px) ... */
+}

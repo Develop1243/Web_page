@@ -41,8 +41,15 @@
             </li>
           </ul>
       </nav>
+      
+      <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+      
     </div>
-  </header>
+</header>
 
   <main>
     <!-- HERO con máscara y video -->
@@ -50,7 +57,7 @@
       <div class="hero-mask">
         <!-- Video recortado en paralelogramo -->
         <video id="heroVideo" autoplay muted loop playsinline preload="metadata">
-          <source src="./media/Rhye - Black Rain (Official Video) - RhyeVEVO (1080p, h264, youtube).mp4" type="video/mp4">
+          <source src="./img/Background/comming soon.mp4" type="video/mp4">
         </video>
 
         <!-- overlay circular que sigue cursor (play/pause) -->
@@ -549,6 +556,19 @@ camino que siguieron para dar el salto.</p>
               });
           }
       });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.navbar .menu');
+
+        if (menuButton && navMenu) {
+            menuButton.addEventListener('click', () => {
+                // Alterna las clases en el botón (para la animación 'X') y el menú (para mostrarlo)
+                menuButton.classList.toggle('is-active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
   </script>
 
 </body>

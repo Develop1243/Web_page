@@ -38,6 +38,12 @@
             </li>
           </ul>
       </nav>
+
+      <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
     </div>
   </header>
 
@@ -63,7 +69,7 @@ académicos flexibles que se adaptan a las exigencias del entrenamiento.
       </div>
     </section>
 
-    <section class="cards-section reveal">
+    <section class="cards-section reveal horizontal-scroll-mobile">
         <h2 class="cards-title">Ventajas clave para el deportista español:</h2>
         <div class="cards-container">
             <div class="card" style="background-image: url('../img/cards/INFRESTRUCTURA.webp');">
@@ -362,12 +368,12 @@ Cómo te ayudamos en HC Scholarships: te orientamos para que tu decisión tenga 
 
     <div class="video-content-overlay">
         <h2>Increibles experiencias</h2>
-        <p>
+        <!-- <p>
             Somos un equipo apasionado por la tecnología, la creatividad y la innovación.  
             Creemos en el poder de las ideas transformadoras, y trabajamos día a día para ofrecer soluciones digitales
             que impulsen el crecimiento de nuestros clientes.  
             Nuestra misión es combinar diseño, estrategia y tecnología para crear experiencias únicas.
-        </p>
+        </p> -->
     </div>
 </section>
 
@@ -419,6 +425,19 @@ Cómo te ayudamos en HC Scholarships: te orientamos para que tu decisión tenga 
   </main>
 
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.navbar .menu');
+
+        if (menuButton && navMenu) {
+            menuButton.addEventListener('click', () => {
+                // Alterna las clases en el botón (para la animación 'X') y el menú (para mostrarlo)
+                menuButton.classList.toggle('is-active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+    
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll("section");
 

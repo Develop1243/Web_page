@@ -1946,6 +1946,55 @@ h1, h2, h3, h4, h5, h6, .brand, .counter-number, .cards-title, .plays-title, .fa
     /* ... el resto de tu código @media (max-width: 600px) ... */
 }
 
+/* --- ESTILOS PARA LAS 4 TARJETAS EN LÍNEA --- */
+.card-grid-4-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas iguales */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para que no se estiren de más */
+    margin: 0 auto;
+}
+
+.card-grid-4-cols .simple-card-link {
+    height: 50vh; /* Reducimos un poco la altura para que las 4 se vean bien juntas */
+}
+
+/* --- ESTILO PARA EL BOTÓN "WATCH THIS" --- */
+.youtube-link button {
+    background: rgba(165, 199, 23, 0.15); /* Fondo casi transparente con un tono verde */
+    border: 2px solid #A5c717; /* Borde verde brillante para definir el botón */
+    color: #fff; /* Texto blanco */
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px; /* Forma de píldora */
+    cursor: pointer;
+    backdrop-filter: blur(5px); /* Efecto cristal moderno */
+    transition: all 0.3s ease;
+    margin-top: 15px; /* Separación del icono de YouTube */
+}
+
+/* Efecto al pasar el mouse por encima */
+.youtube-link button:hover {
+    background: #A5c717; /* Se rellena completamente de verde */
+    color: #000; /* Texto negro para que resalte */
+    transform: scale(1.05); /* Crece un poquito */
+    box-shadow: 0 0 15px rgba(165, 199, 23, 0.6); /* Brillo verde alrededor */
+}
+
+/* Regla para celular (se vuelve 1 columna automáticamente) */
+@media (max-width: 768px) {
+    .card-grid-4-cols {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 400px;
+    }
+    .card-grid-4-cols .simple-card-link {
+        height: 40vh; /* Altura ideal para el celular */
+    }
+}
+
 /* =======================================================
    AJUSTES RESPONSIVOS PARA MÓVIL (No afecta la versión Web)
    ======================================================= */

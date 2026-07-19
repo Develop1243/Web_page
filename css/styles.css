@@ -1945,3 +1945,252 @@ h1, h2, h3, h4, h5, h6, .brand, .counter-number, .cards-title, .plays-title, .fa
 
     /* ... el resto de tu código @media (max-width: 600px) ... */
 }
+
+/* =======================================================
+   AJUSTES RESPONSIVOS PARA MÓVIL (No afecta la versión Web)
+   ======================================================= */
+@media (max-width: 768px) {
+    /* 1. Corrección del Logo enorme y textos con Inline Styles */
+    .hero-content h1 img {
+        width: 90vw !important;
+        max-width: 320px !important;
+        height: auto !important;
+    }
+    .hero-content p[style], .info-text p[style] {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+        padding: 0 10px;
+    }
+
+    /* 2. Ajuste del Hero y Máscara (aprovechando espacio en pantalla) */
+    .hero-mask {
+        width: 100vw !important;
+        height: 65vh !important;
+        clip-path: none !important; /* Quitamos el trapecio para que el video llene el móvil */
+        border-radius: 0 !important;
+    }
+    .hero {
+        height: 65vh !important;
+    }
+
+    /* 3. Header, Línea negra y Menú Hamburguesa */
+    
+    /* Hacemos que el encabezado principal sea una barra oscura fija que siempre te siga */
+    .site-header {
+        background: rgba(10, 10, 10, 0.95) !important;
+        padding: 0 !important;
+        height: 70px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil para separar */
+    }
+    
+    .header-inner {
+        display: flex !important;
+        justify-content: flex-start !important; /* Alinea todo a la izquierda */
+        align-items: center !important;
+        height: 100% !important;
+        padding: 0 5% !important;
+    }
+    
+    /* ELIMINAMOS la línea negra fea y vacía del navbar */
+    .navbar {
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        width: 0 !important; 
+        height: 0 !important;
+        min-height: 0 !important;
+    }
+
+    /* 1er Elemento (Izquierda): Menú Hamburguesa */
+    .hamburger-menu {
+        order: 1 !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 9999 !important;
+        position: relative !important;
+        margin-right: 20px !important; /* Espaciado entre hamburguesa y el texto */
+        margin-left: 0 !important;
+    }
+    
+    /* Animación de la Hamburguesa */
+    .hamburger-menu span {
+        width: 100%;
+        height: 3px;
+        background: #A5c717;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        transform-origin: 1px;
+    }
+    .hamburger-menu.is-active span:nth-child(1) { transform: rotate(45deg); }
+    .hamburger-menu.is-active span:nth-child(2) { opacity: 0; }
+    .hamburger-menu.is-active span:nth-child(3) { transform: rotate(-45deg); }
+
+    /* 2do Elemento (Derecha): Título TEAM ELITE */
+    .brand {
+        order: 2 !important;
+        font-size: 1.4rem !important;
+        z-index: 9999 !important;
+        position: relative !important;
+        color: #A5c717 !important;
+    }
+
+    /* El panel desplegable del menú */
+    .navbar .menu {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: auto !important;
+        width: 75vw !important;
+        height: 100vh !important;
+        background-color: rgba(10, 10, 10, 0.98) !important;
+        padding-top: 90px !important;
+        transform: translateX(-100%) !important; /* Oculto fuera de la pantalla */
+        transition: transform 0.4s ease-in-out !important;
+        box-shadow: 5px 0 20px rgba(0,0,0,0.8) !important;
+        z-index: 9998 !important;
+        align-items: center !important;
+    }
+    
+    .navbar .menu.active {
+        transform: translateX(0) !important; /* Se desliza hacia adentro */
+    }
+    .navbar .menu-item {
+        margin: 15px 0;
+        width: 100%;
+    }
+    .navbar .menu-item a {
+        font-size: 1.3rem;
+        padding: 15px 20px;
+        display: block;
+        text-align: center;
+    }
+
+    /* 4. Altura de los contenedores Parallax (para que no ocupen toda la pantalla) */
+    .parallax-media-container {
+        height: 40vh !important;
+        width: 100% !important;
+        margin-bottom: 25px;
+    }
+    .info-section {
+        padding: 50px 5% !important;
+    }
+    .info-text {
+        width: 100% !important;
+    }
+
+    /* 5. Tarjetas (Flip Cards) centradas y adaptadas */
+    .cards-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .card.flip-card {
+        width: 90% !important;
+        max-width: 350px !important;
+        height: 400px !important;
+        margin: 0 auto 30px auto !important;
+    }
+    
+    /* 6. Galería Interactiva */
+    .gallery-grid-container {
+        grid-template-columns: 1fr !important;
+    }
+    .ig-item {
+        height: 40vh !important;
+        margin-bottom: 20px;
+    }
+
+    /* 7. Sección "Estrategia de Juego" (Desocultada y estilizada como lista vertical) */
+    section.plays-section {
+        display: flex !important;
+        visibility: visible !important;
+        height: auto !important;
+        padding: 60px 5% !important;
+    }
+    .plays-section .board {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        background: transparent !important;
+        min-height: auto !important;
+    }
+    .play-step {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .play-circle {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .play-step .play-text {
+        position: relative !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        width: 100% !important;
+        left: auto !important;
+        top: auto !important;
+        background: #111 !important;
+        border: 1px solid #A5c717 !important;
+        border-radius: 10px;
+        padding: 20px !important;
+        margin-top: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .arrows-svg {
+        display: none !important; /* En móvil las flechas no son necesarias al apilar los pasos */
+    }
+
+    /* 8. Contadores (1 columna para evitar amontonamiento) */
+    .counter-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    .counter-section {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 60px 5% !important;
+    }
+
+    /* 9. Carrusel de Patrocinadores (Mostrar 2 logos a la vez en lugar de 5) */
+    .carousel-item {
+        flex: 0 0 50% !important;
+    }
+
+    /* 10. Secciones Fullscreen ajustadas */
+    .fullscreen-section, .video-section {
+        height: auto !important;
+        padding: 80px 5% !important;
+    }
+    .video-section {
+        height: 50vh !important;
+    }
+    .video-content-overlay h2 {
+        font-size: 2rem !important;
+    }
+  
+  /* 11. Textos de tarjetas aparecen en el centro al hacer scroll */
+    .card:not(.flip-card) .card-overlay {
+        opacity: 0 !important; /* Oculto hasta que llegue al centro */
+        background: rgba(0, 0, 0, 0.75) !important;
+        transition: opacity 0.5s ease-in-out !important;
+    }
+    
+    /* Esta clase la añadirá JavaScript mágicamente */
+    .card:not(.flip-card).en-centro .card-overlay {
+        opacity: 1 !important; 
+    }
+}

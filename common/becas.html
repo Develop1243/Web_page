@@ -824,6 +824,25 @@ Cómo te ayudamos en HC Scholarships: te orientamos para que tu decisión tenga 
               });
           }
       });
+    
+    // --- Efecto de tarjetas que aparecen en el centro de la pantalla (Móvil) ---
+      const mobileCards = document.querySelectorAll('.card:not(.flip-card)');
+      const cardObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              // Si la tarjeta entra en la zona central, le ponemos la clase
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('en-centro');
+              } else {
+                  // Si sale de la zona central, se la quitamos para que se vuelva a ocultar
+                  entry.target.classList.remove('en-centro');
+              }
+          });
+      }, { 
+          // Esto crea una "zona invisible" justo en medio de la pantalla
+          rootMargin: "-35% 0px -35% 0px" 
+      });
+
+      mobileCards.forEach(card => cardObserver.observe(card));
   </script>
 
 </body>

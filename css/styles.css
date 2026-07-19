@@ -2031,7 +2031,7 @@ h1, h2, h3, h4, h5, h6, .brand, .counter-number, .cards-title, .plays-title, .fa
     .hamburger-menu.is-active span:nth-child(2) { opacity: 0; }
     .hamburger-menu.is-active span:nth-child(3) { transform: rotate(-45deg); }
 
-    /* 2do Elemento (Derecha): Título TEAM ELITE */
+    /* 2do Elemento (Derecha): Título HC Scholarships   */
     .brand {
         order: 2 !important;
         font-size: 1.4rem !important;
@@ -2192,5 +2192,24 @@ h1, h2, h3, h4, h5, h6, .brand, .counter-number, .cards-title, .plays-title, .fa
     /* Esta clase la añadirá JavaScript mágicamente */
     .card:not(.flip-card).en-centro .card-overlay {
         opacity: 1 !important; 
+    }
+
+  /* 12. Ajuste dinámico de textos (Letras azules y párrafos) para que respiren en cualquier móvil */
+    .fullscreen-section {
+        padding: 60px 8vw !important; /* 8vw asegura un margen lateral dinámico basado en el ancho de la pantalla */
+        box-sizing: border-box !important;
+    }
+    
+    .fullscreen-section h2 {
+        /* clamp(Mínimo, Ideal, Máximo) -> El texto azul crece y se encoge como liga */
+        font-size: clamp(1.6rem, 8vw, 2.5rem) !important; 
+        margin-bottom: 25px !important;
+        word-break: break-word !important; /* Evita que palabras muy largas rompan la pantalla */
+    }
+    
+    .fullscreen-section p, .info-text p {
+        font-size: clamp(0.95rem, 4vw, 1.1rem) !important; /* El texto de lectura también se vuelve elástico */
+        line-height: 1.7 !important; /* Damos un poco más de aire entre líneas para que sea fácil de leer */
+        text-align: center !important;
     }
 }
